@@ -119,6 +119,15 @@
 	bus-width = <4>;
 };
 
+&hdmi {
+	status = "okay";
+};
+
+&sdhci {
+	status = "okay";
+	bus-width = <4>;
+};
+
 / {
 	__overrides__ {
 		i2s = <&i2s>,"status";
