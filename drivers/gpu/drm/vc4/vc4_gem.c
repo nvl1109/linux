@@ -752,7 +752,7 @@ vc4_wait_bo_ioctl(struct drm_device *dev, void *data,
 
 	ret = vc4_wait_for_seqno_ioctl_helper(dev, bo->seqno, &args->timeout_ns);
 
-	drm_gem_object_unreference(gem_obj);
+	drm_gem_object_unreference_unlocked(gem_obj);
 	return ret;
 }
 
