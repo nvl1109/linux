@@ -398,7 +398,7 @@ vc4_mmap_bo_ioctl(struct drm_device *dev, void *data,
 	/* The mmap offset was set up at BO allocation time. */
 	args->offset = drm_vma_node_offset_addr(&gem_obj->vma_node);
 
-	drm_gem_object_unreference(gem_obj);
+	drm_gem_object_unreference_unlocked(gem_obj);
 	return 0;
 }
 
