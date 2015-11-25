@@ -20,6 +20,12 @@
 			compatible = "raspberrypi,bcm2835-firmware";
 			mboxes = <&mailbox>;
 		};
+
+		v3d_power: v3d_power {
+			compatible = "raspberrypi,bcm2835-power-v3d";
+			firmware = <&firmware>;
+			#power-domain-cells = <0>;
+		};
 	};
 };
 
