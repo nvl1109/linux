@@ -298,10 +298,6 @@ static void vc4_dpi_encoder_enable(struct drm_encoder *encoder)
 		return;
 	}
 
-	ret = clk_set_rate(dpi->pixel_clock, mode->clock * 1000);
-	if (ret)
-		DRM_ERROR("Failed to set clock rate: %d\n", ret);
-
 	if (dpi->connector->display_info.num_bus_formats) {
 		u32 bus_format = dpi->connector->display_info.bus_formats[0];
 
@@ -344,6 +340,10 @@ static void vc4_dpi_encoder_enable(struct drm_encoder *encoder)
 		dpi_c |= DPI_VSYNC_DISABLE;
 
 	DPI_WRITE(DPI_C, dpi_c);
+
+	ret = clk_set_rate(dpi->pixel_clock, mode->clock * 1000);
+	if (ret)
+		DRM_ERROR("Failed to set clock rate: %d\n", ret);
 
 	ret = clk_prepare_enable(dpi->pixel_clock);
 	if (ret)
