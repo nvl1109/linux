@@ -25,6 +25,7 @@
 		stdout-path = &uart1;
 	};
 
+/* disalbe wifi & bluetooth
 	bt_reg_on: btreg_on {
 		compatible = "gpio-reset";
 		pinctrl-names = "default";
@@ -53,6 +54,7 @@
 			enable-active-high;
 		};
 	};
+*/
 };
 
 &resmem {
@@ -516,6 +518,7 @@
 };
 
 /* WIFI SDIO */
+/*
 &usdhc2 {
 	pinctrl-names = "default", "state_100mhz", "state_200mhz";
 	pinctrl-0 = <&pinctrl_usdhc2>;
@@ -528,7 +531,7 @@
 	keep-power-in-suspend;
 	non-removable;
 	status = "okay";
-};
+};*/
 
 &usb3_phy0 {
 	status = "okay";

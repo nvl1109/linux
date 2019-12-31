@@ -21,3 +21,4 @@ obj-$(CONFIG_DRM_PANEL_SHARP_LS043T1LE01) += panel-sharp-ls043t1le01.o
 obj-$(CONFIG_DRM_PANEL_SITRONIX_ST7789V) += panel-sitronix-st7789v.o
 obj-$(CONFIG_DRM_PANEL_RAYDIUM_RM67191) += panel-raydium-rm67191.o
 obj-$(CONFIG_DRM_PANEL_JDI_TPM0501010P) += panel-jdi-tpm0501010p.o
+obj-$(CONFIG_DRM_PANEL_NOVATEK_NT35596) += panel-novatek-nt35596.o
